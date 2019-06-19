@@ -67,25 +67,6 @@ public class MainActivity extends AppCompatActivity {
                 }
 //                imageView.setImageBitmap(bitmap1);
 
-                int[] pixels = new int[bitmap1.getWidth() * bitmap1.getHeight()];
-                bitmap1.getPixels(pixels, 0, bitmap1.getWidth(), 0, 0, bitmap1.getWidth(), bitmap1.getHeight());
-                int a = 0, r = 0, g = 0, b = 0;
-                int index = 0;
-                for(int row = 0;row<bitmap1.getHeight();row++){
-                    for(int col = 0;col < bitmap1.getWidth();col++){
-                        index = bitmap1.getWidth() * bitmap1.getHeight() + col;
-                        a = (pixels[index]>>24)&0xff;
-                        r = (pixels[index]>>16)&0xff;
-                        g = (pixels[index]>>8)&0xff;
-                        b = (pixels[index])&0xff;
-
-                        r = 255-r;
-                        g = 255 -g;
-                        b = 255-b;
-                        pixels[index] = (a<<24)|(r<<16)|(g<<8)|b;
-                    }
-                }
-                bitmap1.setPixels(pixels,0, bitmap1.getWidth(), 0, 0, bitmap1.getWidth(), bitmap1.getHeight());
 
                 imageView.setImageBitmap(bitmap1);
 //                Mat src = new Mat();
